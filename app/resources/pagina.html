@@ -1,0 +1,620 @@
+<!--[main]-->    
+    <style>
+        body{
+        	background: #ffffff;
+            font-family: 'Roboto', sans-serif;
+            font-weight: 400;
+            position: relative;
+    	}
+    	.content{
+    	    padding: 0px;
+    	}
+    	
+    	h1, h2, h3, h4, h5, h6, 
+    	.h1, .h2, .h3, .h4, .h5, .h6{
+    	    font-family: 'Roboto', sans-serif;
+    	}
+    
+        .heading {
+             font-size: 22px;
+             font-weight: 500;
+        }
+        
+        .subheading {
+              font-size: 16px;
+              padding-bottom: 60px;
+        }
+        hr {
+        	border-top: 2px solid #828282;
+            width: 120px;
+            margin: 20px auto; 
+        }        
+        p {
+          color: #848484;
+          font-weight: 400;
+          font-size: 16px;
+          letter-spacing: 0.4px;
+          line-height: 28px;
+        }
+        
+        .jumbotron{
+          border-radius: 10px;
+          background-color: rgba(213, 89, 12, 0.6);
+          margin-top: 20px;
+        }
+        .parallax-section {
+          background-attachment: fixed !important;
+          background-size: cover !important;
+        }
+        nav.nav-menu {
+          background: #ffffff;
+          box-shadow: 0px 2px 8px 0px rgba(50, 50, 50, 0.04);
+          border: none;
+          margin-bottom: 0;
+          padding: 10px;
+        }
+       
+        .navbar, .navbar-nav .nav-item a {
+          line-height: 28px;
+          font-size: 12px;
+          letter-spacing: 1px;
+          color: #777;
+        }
+        .navbar .navbar-brand  {
+          color: #5C5C5C;
+          font-size: 22px;
+          font-weight: bold;
+          letter-spacing: 2px;
+        }
+       
+        #home {
+          background: url('app/templates/theme1/images/banner.jpg') 50% 0 repeat-y fixed;
+          -webkit-background-size: cover;
+          background-size: cover;
+          background-position: center;
+          color: #ffffff;
+          display: -webkit-box;
+          display: -webkit-flex;
+          display: -ms-flexbox;
+          display: flex;
+          -webkit-box-align: center;
+          -webkit-align-items: center;
+              -ms-flex-align: center;
+                  align-items: center;
+          height: 100vh;
+          /*text-align: center;*/
+        }
+        .home #id_div_texto_banner{
+          /*color: #fff;*/
+          background-color: rgba(0,0,0,0.5);
+          padding: 20px;
+          border-radius: 8px;
+          position: relative;
+          /*top: 50%;*/
+          left: 50%;
+          transform: translate(-50%);
+          transition: 0.3s;
+          text-align: center;
+        }
+        /* gallery section */
+        #gallery {
+          padding-top: 80px;
+          padding-bottom: 80px;
+        }
+        #div_gallery {
+          padding-top: 52px;
+        }
+        #gallery img {
+          width: 100%;
+          padding-bottom: 18px;
+        }
+        .div_img_gallery {
+          position: relative;
+        }
+        .div_texto_gallery{
+            margin-bottom: 50px;
+        }
+        #gallery h3 {
+          font-size: 18px;
+          line-height: 8px;
+        }
+        /* Section Menu Preços */
+            .id_td_line{
+             border-top: 0px;
+        }
+        #menu-preco, #gallery, #team {
+        	padding-top: 100px;
+        	padding-bottom: 100px;
+        }
+        #menu-preco, #contact {
+          background: #f0f0f0;
+        }
+        #menu-preco h4 {
+        	line-height: 1.5;
+        	font-size: 18px;
+            margin-top: 10px;
+            margin-bottom: 10px;
+        }
+        #menu-preco .col-md-8 {
+          padding-bottom: 42px;
+        }
+        #menu-preco .col-md-6 {
+          padding-bottom: 18px;
+        }
+        #menu-preco span {
+          color: #5C5C5C;
+        }
+        /* Fim Section Menu Preços */
+        
+        /* Section Novidades */
+        @import url('https://fonts.googleapis.com/css?family=Dancing+Script:400,700|Lato:900');
+        
+        #novidades {
+          background: url('app/templates/theme1/images/banner_novidades.jpg') 50% 0 repeat-y fixed;
+          -webkit-background-size: cover;
+          background-size: cover;
+          background-position: center;
+          color: #ffffff;
+          display: -webkit-box;
+          display: -webkit-flex;
+          display: -ms-flexbox;
+          display: flex;
+          -webkit-box-align: center;
+          -webkit-align-items: center;
+          -ms-flex-align: center;
+          align-items: center;
+          height: 100vh;
+          /*text-align: center;*/
+        }
+        
+        .novidades #id_banner_novidades{
+          /*color: #fff;*/
+          background-color: rgba(208, 137, 15, 0.67);
+          /*padding: 20px;*/
+          /*border-radius: 8px;*/
+          position: relative;
+          /*top: 50%;*/
+          left: 50%;
+          transform: translate(-50%);
+          transition: 0.3s;
+          text-align: center;
+        }
+        
+        .novidades p{
+          font-family: 'Dancing Script', cursive;
+          letter-spacing: 6px;
+          font-style: inherit;
+          font-size: 24px;
+          padding-top: 10px;
+          color: #5a3217;
+        }
+        
+        .novidades .heading {
+          font-size: 30px;
+          font-weight: 500;
+          color: black;
+        }
+        
+        .novidades h2, .novidades h4{
+          color: black;
+        }
+                
+        
+        #menu-preco, #gallery, #team {
+        	padding-top: 100px;
+        	padding-bottom: 100px;
+        }
+        
+        /* contact section */
+        .heading{
+            font-size: 28px;
+            font-weight: 500;
+        }
+        #contact {
+          padding-top: 80px;
+          padding-bottom: 100px;
+        }
+        #input_nome,
+        #input_email,
+        #input_telefone{
+            background: #ffffff;
+            border-radius: 10px;
+            box-shadow: none;
+            margin-top: 10px;
+            margin-bottom: 10px;
+            transition: all 0.4s ease-in-out;
+            height: 48px;
+        }
+        #contact .form-control:focus {
+            border-color: #999;
+            border: 2px solid #999;
+        
+        }
+        #input_mensagem{
+            background: #ffffff;
+            border-radius: 10px !important;
+            box-shadow: none;
+            margin-top: 10px;
+            margin-bottom: 10px;
+            transition: all 0.4s ease-in-out;
+            width: 100%;
+        }
+        
+        #botao_form_contato {
+            background: transparent;
+            border: 2px solid #999;
+            border-radius: 10px;
+            letter-spacing: 2px;
+            margin-top: 12px;
+            height: 50px;
+            text-align: center;
+            cursor: pointer;
+            width: 100%;
+        }
+        #botao_form_contato:hover{
+            text-align: center;
+            background: #999;
+            color: #ffffff;
+        }
+        /* footer section */
+        footer {
+          background: url('app/templates/theme1/images/footer-bg.jpg') 50% 0 repeat-y fixed;
+          -webkit-background-size: cover;
+          background-size: cover;
+          background-position: center;
+          color: #ffffff;
+          padding-top: 80px;
+          padding-bottom: 80px;
+        }
+        footer h2 {
+          padding-bottom: 14px;
+        }
+        footer h3 {
+          padding-top: 8px;
+        }
+        footer p {
+          color: #ffffff;
+        }
+        footer span {
+          font-weight: bold;
+          padding-left: 24px;
+        }
+        footer .ph, footer .address {
+          padding-top: 12px;
+          padding-bottom: 12px;
+        }
+        footer .fa {
+          font-size: 12px;
+          padding-right: 10px;
+        }
+        
+        /* social icon */
+        .social-icon {
+          padding: 0;
+        }
+        .social-icon li {
+          list-style: none;
+          display: inline-block;
+          padding: 0;
+        }
+        .social-icon li a {
+          background: #f0f0f0;
+          border-radius: 50%;
+          color: #5C5C5C;
+          font-size: 16px;
+          width: 48px;
+          height: 48px;
+          line-height: 48px;
+          text-align: center;
+          text-decoration: none;
+          transition: all 0.4s ease-in-out;
+          margin-top: 12px;
+          margin-right: 16px;
+          top: 0;
+          position: relative;
+          padding: 0;
+        }
+        .social-icon li a:hover {
+          background: #F6D76B;
+          top: 5px;
+        }
+        
+        /* copyright section */
+        #copyright {
+          background: #343434;
+          color: #ffffff;
+          padding-top: 10px;
+          padding-bottom: 5px;
+          text-align: center;
+          margin-bottom: 0px;
+        }
+        #copyright p {
+          color: #ffffff;
+        }
+        #copyright a {
+          color: #ffffff;
+        }
+        #copyright a:hover {
+          color: #FF0;
+        }
+    </style>
+   
+    <!-- Section Menu -->
+    
+    <nav class="navbar navbar-expand-lg nav-menu ">
+        <div class="container">
+            <a href="#" class="navbar-brand">KITRUFAS</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar-collapse" aria-controls=".navbar-collapse" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            
+            <div class="collapse navbar-collapse  justify-content-end" id="navbar-collapse">
+                <ul class="navbar-nav">
+                    <li class="nav-item active">
+                    <a href="#home" id="home_" class="nav-link">HOME</a>
+                    </li>
+                    <li class="nav-item active">
+                    <a href="#gallery" id="galeria" class="nav-link">GALERIA</a>
+                    </li>
+                    <li class="nav-item active">
+                    <a href="#menu" id="menupreco" class="nav-link">PREÇOS</a>
+                    </li>
+                    <li class="nav-item active">
+                    <a href="#novidades" id="novidades_" class="nav-link">NOVIDADES</a>
+                    </li>
+                    <!--<li class="nav-item active"><a href="#team" id="sobre" class="smoothScroll">SOBRE</a></li>-->
+                    <li class="nav-item active">
+                    <a href="#contact" id="contato" class="nav-link">CONTATO</a>
+                    </li>
+                  </ul>
+            </div>
+        </div>
+    </nav>
+    <!-- Fim Section Menu -->
+    
+    <!-- Section Home -->
+    <section id="home" class="parallax-section home">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-6 col-sm-9 col-xs-12" id="id_div_texto_banner">
+            <h2>KITRUFAS DOCES GOURMET</h2>
+            <h3>DOCES &amp; CHOCOLATES</h3>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- Fim Section Home --> 
+    
+    <!-- Section Gallery-->
+    <section id="gallery" class="parallax-section galeria">
+      <div class="container">
+      
+        <div class="row">
+          <div class="col text-center">
+            <h1 class="heading">Galeria de Sabores</h1>
+            <hr>
+          </div>
+        </div>
+        <div class="row" id="div_gallery">
+        
+            <div class="col">
+                <div class="row">
+                    <div class="div_img_gallery">
+                        <a href="app/templates/theme1/images/galleria1.jpg" data-lightbox-gallery="zenda-gallery">
+                          <img src="app/templates/theme1/images/galleria1.jpg" alt="gallery img">
+                        </a>
+                    </div>
+                    
+                    <div class="div_texto_gallery">
+                        <h3>Docinhos Tradicionais</h3>
+                        <span>Cajuzinho / Beijinho / Brigadeiro</span>
+                    </div>             
+                </div>
+                
+                <div class="row">
+                    <div class="div_img_gallery">
+                        <a href="app/templates/theme1/images/galleria2.jpg" data-lightbox-gallery="zenda-gallery">
+                          <img src="app/templates/theme1/images/galleria2.jpg" alt="gallery img">
+                        </a>  
+                    </div>
+                    
+                    <div class="div_texto_gallery">
+                      <h3>O melhor do chocolate</h3>
+                      <span>Ao leite / Meio amargo / Amargo </span>
+                    </div>  
+                </div>
+            </div>
+            
+            <div class="col">
+                <div class="div_img_gallery">
+                    <a href="app/templates/theme1/images/galleria3.jpg" data-lightbox-gallery="zenda-gallery">
+                      <img src="app/templates/theme1/images/galleria3.jpg" alt="gallery img" style="height: 598px;">
+        			</a>
+        	    </div>
+			
+                <div class="div_texto_gallery">
+                  <h3>Doces - Trufas -Bombons</h3>
+                  <span>O melhor em qualidade para bem atendê-lo</span>
+                </div>    
+            </div>
+            
+            <div class="col">
+                <div class="row">
+                    <div class="div_img_gallery">
+                        <a href="app/templates/theme1/images/galleria4.jpg" data-lightbox-gallery="zenda-gallery">
+                          <img src="app/templates/theme1/images/galleria4.jpg" alt="gallery img">
+            			</a>
+        			</div>
+        			
+        			<div class="div_texto_gallery">
+                      <h3>Bombons</h3>
+                      <span>Côco / Chocolate / Churros</span>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="div_img_gallery">
+                        <a href="app/templates/theme1/images/galleria5.jpg" data-lightbox-gallery="zenda-gallery">
+                          <img src="app/templates/theme1/images/galleria5.jpg" alt="gallery img">
+            			</a>
+			        </div>
+			        
+                    <div class="div_texto_gallery">
+                      <h3>Maravilhosas Trufas</h3>
+                      <span>Sabores variados / E de sua preferência </span>
+                    </div>
+                </div>
+            </div>
+            
+        </div>
+                 
+        
+      </div>
+    </section>
+    <!-- Section Gallery-->
+    
+    <!-- Section Menu Preços -->
+    <section id="menu-preco" class="parallax-section menu-preco">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-offset-2 col-md-8 col-sm-12 text-center">
+            <h1 class="heading">Nossos Preços</h1>
+            <hr>
+          </div>
+          <div class="col-md-6 col-sm-6">
+            <h4>Docinho Convencional ................ <span>{{ 45.00 | currency:'BRL':'true'}}</span></h4>
+            <h5>O Cento</h5>
+          </div>
+          <div class="col-md-6 col-sm-6">
+            <h4>Doces Gourmet ................................ <span>{{70.00 | currency:'BRL':'true'}}</span></h4>
+            <h5>O Cento</h5>
+          </div>
+          <div class="col-md-6 col-sm-6">
+            <h4>Trufas Variadas ............................. <span>{{2.00 | currency:'BRL':'true'}}</span></h4>
+            <h5>A unidade</h5>
+          </div>
+          <div class="col-md-6 col-sm-6">
+            <h4>Trufas Variadas .............................. <span>{{150.00 | currency:'BRL':'true'}}</span></h4>
+            <h5>O Cento</h5>
+          </div>
+          <div class="col-md-6 col-sm-6">
+            <h4>Bombons Variados ........................ <span>{{1.50 | currency:'BRL':'true'}}</span></h4>
+            <h5>A Unidade</h5>
+          </div>
+          <div class="col-md-6 col-sm-6">
+            <h4>Bombons Variados ........................... <span>{{90.00 | currency:'BRL':'true'}}</span></h4>
+            <h5>O Cento</h5>
+          </div>
+          <div class="col-md-6 col-sm-6">
+            <h4>Copinhos de Chocolate ................. <span>{{2.00 | currency:'BRL':'true'}}</span></h4>
+            <h5>A Unidade</h5>
+          </div>
+          <div class="col-md-6 col-sm-6">
+            <h4>Pirulito de Chocolate .......................... <span>{{1.80 | currency:'BRL':'true'}}</span></h4>
+            <h5>A Unidade</h5>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- Fim Section Menu Preços -->
+    
+    <!-- Section Sobre -->
+    <!-- Fim Section Sobre -->
+
+    <!-- Início de Sessão Novidades -->
+    <section class="slider novidades" id="novidades">
+      <div class="col-md-12 col-sm-12 col-xs-12"  id="id_banner_novidades">
+        <div class="col-md-2">
+          <img src="app/templates/theme1/images/chocolate_left_novidades.png" height="250" width="max-content"/>
+        </div>
+    
+        <div class="col-md-10 col-sm-12">
+          <h1 style="padding-top: 20px;" class="heading">Novidades</h1>
+          <hr>
+          <p>Procurando algo diferente para uma pessoa especial??</p>
+          <p>Veio ao lugar certo...</p>
+        </div>
+    
+        <div class="container">
+          <div class="col-md-12 col-sm-12">
+            <div class="jumbotron">
+              <h2>Mês de Março.. Pascoa chegando</h2>
+              <h4>Em breve teremos muitas novidades, aguardem!!</h4>
+            </div>
+          </div>
+        </div>
+    
+      </div>
+    </section>
+    <!-- Fim de Sessão Novidades -->
+    
+    
+    
+    <!-- Section Contato -->
+    <section id="contact" class="parallax-section contato">
+      <div class="container">
+            <section id="contact">
+                <div class="container">
+                    <div class="row">
+                        <div class="col text-center">
+                            <h1 class="heading">Contate-nos</h1>
+                        <hr>
+                        </div>
+                    </div>
+                    {$formulario}
+                </div>   
+            </section>
+        </div>
+    </section>
+    <!-- Fim Section Contato -->
+   
+    <!-- Section Footer -->
+    <footer class="parallax-section">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-4 col-sm-4 wow fadeInUp" data-wow-delay="0.6s">
+            <h2 class="heading">Informações de Contato</h2>
+            <div class="ph">
+              <p><i class="fa fa-phone"></i> Telefone</p>
+              <h4>(21)97691-3039</h4>
+            </div>
+            <div class="address">
+              <p><i class="fa fa-map-marker"></i> Nossa Localização</p>
+              <h4>Av: Comendador Teles, 1758 - Vilar dos Teles - RJ</h4>
+            </div>
+          </div>
+          <div class="col-md-4 col-sm-4 wow fadeInUp" data-wow-delay="0.6s">
+            <h2 class="heading">Horário de Atendimento</h2>
+            <p>Seg-Sex <span>9:00 - 18:00 </span></p>
+            <p>Sábado <span>9:00 - 12:00 </span></p>
+          </div>
+          <div class="col-md-4 col-sm-4 wow fadeInUp" data-wow-delay="0.6s">
+            <h2 class="heading">Social</h2>
+            <ul class="social-icon">
+              <li><a href="javascrip:void(0)" class="fa fa-facebook wow bounceIn" data-wow-delay="0.3s"></a></li>
+              <!--<li><a href="javascrip:void(0)" class="fa fa-twitter wow bounceIn" data-wow-delay="0.6s"></a></li>-->
+              <li><a href="https://www.instagram.com/kitrufas77/"  target="_blank" class="fa fa-instagram wow bounceIn" data-wow-delay="0.9s"></a></li>
+              <li><a href="javascrip:void(0)" class="fa fa-google-plus wow bounceIn" data-wow-delay="0.9s"></a></li>
+              <!--<li><a href="#" class="fa fa-github wow bounceIn" data-wow-delay="0.9s"></a></li>-->
+            </ul>
+          </div>
+        </div>
+      </div>
+    </footer>
+    <!-- Section Footer -->
+    
+    <!-- Section copyright -->
+    <section id="copyright">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-12 col-sm-12">
+            <!--<h3>DT Consultoria</h3>-->
+            <p>Copyright © Developer Tech Consultoria
+    
+              | Design: <a rel="nofollow" href="http://www.dtconsultoria.com.br" target="_blank">Web Site</a></p>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- Fim Section copyright -->
+
+<!--[/main]-->

@@ -1,0 +1,68 @@
+<!--[main]-->
+<style>
+.heading{
+    font-size: 28px;
+    font-weight: 500;
+}
+#contact {
+  padding-top: 80px;
+  padding-bottom: 100px;
+}
+#input_nome,
+#input_email,
+#input_telefone{
+    background: #ffffff;
+    border-radius: 10px;
+    box-shadow: none;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    transition: all 0.4s ease-in-out;
+    height: 48px;
+}
+#contact .form-control:focus {
+    border-color: #999;
+    border: 2px solid #999;
+
+}
+#input_mensagem{
+    background: #ffffff;
+    border-radius: 10px !important;
+    box-shadow: none;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    transition: all 0.4s ease-in-out;
+    width: 100%;
+}
+
+#botao_form_contato {
+    background: transparent;
+    border-radius: 10px;
+    letter-spacing: 2px;
+    margin-top: 12px;
+    height: 50px;
+    text-align: center;
+    cursor: pointer;
+    width: 100%;
+}
+#botao_form_contato:hover{
+        border: 2px solid #999;
+    }
+
+</style>
+        
+    <!-- Section Contato -->
+    <div class="container">
+        <section id="contact">
+          <div class="container">
+            <div class="row">
+              <div class="col text-center">
+                <h1 class="heading">Contate-nos</h1>
+                <hr>
+              </div>
+            </div>
+              {$formulario}
+           </div>   
+        </section>
+    </div>
+    <!-- Fim Section Contato -->
+<!--[/main]-->
