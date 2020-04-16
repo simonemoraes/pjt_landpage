@@ -1,57 +1,76 @@
 <?php
-/**
- * Template View pattern implementation
- *
- * @version    1.0
- * @package    samples
- * @subpackage tutor
- * @author     Pablo Dall'Oglio
- * @copyright  Copyright (c) 2006 Adianti Solutions Ltd. (http://www.adianti.com.br)
- * @license    http://www.adianti.com.br/framework-license
- */
-class Pagina extends TPage
+
+class PaginaInicial extends TPage
 {
-    /**
-     * Constructor method
-     */
-     
-     private $form;
-     private $html;
-     private $landpage;
-     private $template;
-     
+
+    protected $landpage = "";
+    protected $form;
+    
     public function __construct()
     {
         parent::__construct();
         
-        // create the HTML Renderer
-        $this->landpage = new THtmlRenderer('app/resources/pagina2.html');
-                
-        $this->onShow1();
+        
 
+        $location = 'https://sandbox.adiantibuilder.com.br/ruiandersonsantos/sgs/licenca/1/getLicencaByUrl';
+    
+        $parameters = [
+                        'dominio' => $_SERVER['HTTP_HOST']
+                               
+                    ];
+                   
+        $rest_key = Util::API_KEY;
+        $retorno = AdiantiHttpClientModify::request($location, 'POST', $parameters, 'Basic '.$rest_key);
+                    
+        if($retorno && !empty($retorno[0])){
+            
+            $obj_array = json_decode($retorno[0]);
+            
+            if($obj_array->data->status == "sucesso"){
+                
+                $this->landpage = new THtmlRenderer('app/resources/pagina2.html');
+                
+                $this->onCreateFormulario();
+                
+               
+               
+            }else{
+            
+                $this->landpage =  new THtmlRenderer("app/resources/manutencao.html");
+                
+                
+                $this->landpage->enableSection('main', false);
+               
+            
+            }
+        
+        }
+    
+        
+        
         parent::add($this->landpage);
     }
     
-    public function onShow1(){
+    
+    public function onCreateFormulario(){
+    
         $meuform = new Formulario();
         
         $this->form = $meuform->onCreateFormOutLabel();
         
-        $this->html = $this->landpage;
+        $array = [];
         
-        $array = array();
-    	$array['formulario'] = $this->form;
-    	
-    	// habilitando a sessao no html
-    	$this->html->enableSection('main', $array);
-    	
-    	
+        $array['formulario'] = $this->form;
+        
+        $this->landpage->enableSection('main', $array);
+    
     }
     
-    public function onSend($param)
-    {
+    public function enviaDadosFormularioContato($params = null){
+    
         try
         {
+                         
             $data = $this->form->getData();
             
             // run form validation
@@ -95,5 +114,9 @@ class Pagina extends TPage
         {
              new TMessage('error', $e->getMessage());
         }
+    
     }
+
+
 }
+

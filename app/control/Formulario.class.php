@@ -96,7 +96,7 @@ class Formulario extends TPage
                  
              // Criando o botao que fará a submissao do formulário
              $button = new TButton('action1');
-             $button->setAction(new TAction(array('Pagina', 'onSend')), 'Enviar');
+             $button->setAction(new TAction(array('PaginaInicial', 'enviaDadosFormularioContato')), 'Enviar');
              $button->id = 'botao_form_contato';
              
              // Adicionando os campos ao formulário

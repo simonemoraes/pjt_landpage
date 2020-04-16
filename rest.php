@@ -18,33 +18,33 @@ class AdiantiRestServer
         
         try
         {
-            if (empty($headers['Authorization']))
-            {
-                throw new Exception( _t('Authorization error') );
-            }
-            else
-            {
-                if (substr($headers['Authorization'], 0, 5) == 'Basic')
-                {
-                    if (empty($ini['general']['rest_key']))
-                    {
-                        throw new Exception( _t('REST key not defined') );
-                    }
-					
-                    if ($ini['general']['rest_key'] !== substr($headers['Authorization'], 6))
-                    {
-                        return json_encode( array('status' => 'error', 'data' => _t('Authorization error')));
-                    }
-                }
-                else if (substr($headers['Authorization'], 0, 6) == 'Bearer')
-                {
-                    ApplicationAuthenticationService::fromToken( substr($headers['Authorization'], 7) );
-                }
-                else
-                {
-                    throw new Exception( _t('Authorization error') );
-                }
-            }
+//             if (empty($headers['Authorization']))
+//             {
+//                 throw new Exception( _t('Authorization error') );
+//             }
+//             else
+//             {
+//                 if (substr($headers['Authorization'], 0, 5) == 'Basic')
+//                 {
+//                     if (empty($ini['general']['rest_key']))
+//                     {
+//                         throw new Exception( _t('REST key not defined') );
+//                     }
+// 					
+//                     if ($ini['general']['rest_key'] !== substr($headers['Authorization'], 6))
+//                     {
+//                         return json_encode( array('status' => 'error', 'data' => _t('Authorization error')));
+//                     }
+//                 }
+//                 else if (substr($headers['Authorization'], 0, 6) == 'Bearer')
+//                 {
+//                     ApplicationAuthenticationService::fromToken( substr($headers['Authorization'], 7) );
+//                 }
+//                 else
+//                 {
+//                     throw new Exception( _t('Authorization error') );
+//                 }
+//             }
             
             $response = AdiantiCoreApplication::execute($class, $method, $request, 'rest');
             return json_encode( array('status' => 'success', 'data' => $response));

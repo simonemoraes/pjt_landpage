@@ -1,8 +1,4 @@
 <?php
-namespace Adianti\Http;
-
-use Adianti\Core\AdiantiCoreTranslator;
-use Exception;
 
 /**
  * Basic HTTP Client request
@@ -13,7 +9,7 @@ use Exception;
  * @copyright  Copyright (c) 2006 Adianti Solutions Ltd. (http://www.adianti.com.br)
  * @license    http://www.adianti.com.br/framework-license
  */
-class AdiantiHttpClient
+class AdiantiHttpClientModify
 {
     /**
      * Execute a HTTP request
@@ -54,32 +50,11 @@ class AdiantiHttpClient
         
         curl_setopt_array($ch, $defaults);
         $output = curl_exec ($ch);
-        
-        if ($output === false)
-        {
-            throw new Exception( curl_error($ch) );
-        }
-        
-        curl_close ($ch);
-        
-        $return = (array) json_decode($output);
-        
-        if (json_last_error() !== JSON_ERROR_NONE)
-        {
-            throw new Exception(AdiantiCoreTranslator::translate('Return is not a valid JSON. Check the URL'));
-        }
-        
-        if (!empty($return['status']) && $return['status'] == 'error') {
-            throw new Exception(!empty($return['data']) ? $return['data'] : $return['message']);
-        }
-        
-        if (!empty($return['error'])) {
-            throw new Exception($return['error']['message']);
-        }
-        
-        if (!empty($return['errors'])) {
-            throw new Exception($return['errors']['message']);
-        }
-        return $return['data'];
+		
+		$info_request = curl_getinfo ( $ch );
+		
+		$resultado = array($output, $info_request);
+		
+        return $resultado;
     }
 }
