@@ -25,7 +25,7 @@ class Pagina extends TPage
         parent::__construct();
         
         // create the HTML Renderer
-        $this->landpage = new THtmlRenderer('app/resources/pagina2.html');
+        $this->landpage = new THtmlRenderer('app/resources/interfaces/pagina2.html');
                 
         $this->onShow1();
 

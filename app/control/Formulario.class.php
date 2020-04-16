@@ -98,6 +98,8 @@ class Formulario extends TPage
              $button = new TButton('action1');
              $button->setAction(new TAction(array('PaginaInicial', 'enviaDadosFormularioContato')), 'Enviar');
              $button->id = 'botao_form_contato';
+             $button->{'data-toggle'} = 'modal';
+             $button->{'data-target'} =  '#exampleModal';
              
              // Adicionando os campos ao formulário
              $this->form->setFields([$input_nome, $input_email, $input_telefone, $input_mensagem, $button]);
